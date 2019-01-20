@@ -97,11 +97,11 @@ IMAGES_STORE = "E:\\buff163"
 # 数据库配置
 DATABASE_SETTINGS = {
     'mysql': {
-        'host': '118.89.160.140',
-        'port': 3306,
-        'user': 'root',
-        'passwd': 'root',
-        'db': 'test',
+        'host': '***',
+        'port': 999,
+        'user': '***',
+        'passwd': '***',
+        'db': '***',
         'charset': 'utf8',
     }
 }
