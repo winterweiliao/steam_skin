@@ -46,15 +46,15 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
-SPIDER_MIDDLEWARES = {
-   'steam_skin.middlewares.SteamSkinSpiderMiddleware': 543,
-}
+# SPIDER_MIDDLEWARES = {
+#    'steam_skin.middlewares.SteamSkinSpiderMiddleware': 543,
+# }
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'picture.middlewares.MyCustomDownloaderMiddleware': 543,
-#}
+# DOWNLOADER_MIDDLEWARES = {
+#    'steam_skin.middlewares.Buff163SpiderSpiderMiddleware': 543,
+# }
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
@@ -67,9 +67,8 @@ SPIDER_MIDDLEWARES = {
 ITEM_PIPELINES = {
     # 'steam_skin.pipelines.SteamSkinPipeline': 300,
     'steam_skin.pipelines.Buff163Pipeline': 300,
+    # 'steam_skin.pipelines.MyImagesPipeline': 300,
 }
-
-IMAGES_STORE = 'E:'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -91,3 +90,18 @@ IMAGES_STORE = 'E:'
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# 图片存储路径
+IMAGES_STORE = "E:\\buff163"
+
+# 数据库配置
+DATABASE_SETTINGS = {
+    'mysql': {
+        'host': '118.89.160.140',
+        'port': 3306,
+        'user': 'root',
+        'passwd': 'root',
+        'db': 'test',
+        'charset': 'utf8',
+    }
+}
