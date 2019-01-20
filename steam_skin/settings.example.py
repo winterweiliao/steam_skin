@@ -9,7 +9,7 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'steam_skin'
+BOT_NAME = 'buff163'
 
 SPIDER_MODULES = ['steam_skin.spiders']
 NEWSPIDER_MODULE = 'steam_skin.spiders'

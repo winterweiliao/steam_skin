@@ -7,12 +7,10 @@
 
 import scrapy
 import pymysql
-import datetime
 
 
 class SteamSkinItem(scrapy.Item):
     # define the fields for your item here like:
-    image_url = scrapy.Field()
     pass
 
 

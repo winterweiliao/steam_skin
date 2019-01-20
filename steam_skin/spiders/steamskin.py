@@ -9,6 +9,5 @@ class SteamSkinSpider(scrapy.Spider):
 
     def parse(self, response):
         item = SteamSkinItem()
-        item['image_urls'] = response.xpath('//img//@src').extract()  # 提取图片链接
         yield item
 
