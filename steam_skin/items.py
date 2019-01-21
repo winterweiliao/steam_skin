@@ -11,6 +11,7 @@ import pymysql
 
 class SteamSkinItem(scrapy.Item):
     # define the fields for your item here like:
+    # name = scrapy.Field()
     pass
 
 
@@ -48,12 +49,12 @@ class Buff163Item(scrapy.Item):
             conn.close()
             return
         fields = u""
-        values = u"'"
+        values = u""
         for key, value in self.items():
-            fields += unicode(key) + u","
-            values += unicode(value) + u"','"
+            fields += u"%s," % key
+            values += u"'%s'," % value
         fields = fields.rstrip(u",")
-        values = values.rstrip(u"'").rstrip(u",")
+        values = values.rstrip(u",")
 
         sql = u"insert into goods_trade(%s) values (%s)" % (fields, values)
         cursor.execute(sql)
