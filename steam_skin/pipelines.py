@@ -11,9 +11,15 @@ from scrapy.http import Request
 
 class SteamSkinPipeline(object):
     """
-        SteamSkinPipeline
-        """
+    SteamSkinPipeline
+    """
     def process_item(self, item, spider):
+        """
+
+        :param item:
+        :param spider:
+        :return:
+        """
         return item
 
 
@@ -28,6 +34,6 @@ class Buff163Pipeline(object):
         :param spider:
         :return:
         """
-        item.do_insert(**spider.settings['DATABASE_SETTINGS']['mysql'])
+        item.do_insert()
         return item
 

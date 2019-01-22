@@ -55,11 +55,3 @@ class SteamSkinSpiderMiddleware(object):
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
 
-
-class Buff163SpiderSpiderMiddleware(object):
-
-    def process_request(self, request, spider):
-        referer = request.url
-        if referer:
-            request.headers['referer'] = referer
-

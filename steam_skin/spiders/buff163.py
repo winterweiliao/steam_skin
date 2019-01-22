@@ -52,5 +52,5 @@ class Buff163Spider(scrapy.Spider):
             now = datetime.datetime.now()
             item['create_at'] = now
             item['update_at'] = now
-            yield Buff163Item(item)
+            yield item
 

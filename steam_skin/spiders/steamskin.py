@@ -8,6 +8,11 @@ class SteamSkinSpider(scrapy.Spider):
     start_urls = ["https://steamcommunity.com/market/"]
 
     def parse(self, response):
+        """
+
+        :param response:
+        :return:
+        """
         item = SteamSkinItem()
         yield item
 
