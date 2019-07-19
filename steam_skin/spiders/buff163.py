@@ -4,7 +4,7 @@ import pymysql
 import json
 import time
 import datetime
-from steam_skin.items import Buff163Item
+from ..items import Buff163Item
 
 
 class Buff163Spider(scrapy.Spider):
@@ -53,4 +53,3 @@ class Buff163Spider(scrapy.Spider):
             item['create_at'] = now
             item['update_at'] = now
             yield item
-
