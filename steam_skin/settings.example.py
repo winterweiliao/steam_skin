@@ -90,8 +90,10 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+MEDIA_ALLOW_REDIRECTS = True
+
 # 图片存储路径
-IMAGES_STORE = "E:\\buff163"
+IMAGES_STORE = "e:\\images_store"
 
 # 数据库配置
 DATABASE_SETTINGS = {
@@ -104,3 +106,14 @@ DATABASE_SETTINGS = {
         'charset': 'utf8',
     }
 }
+
+
+# Enables scheduling storing requests queue in redis.
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+
+# Ensure all spiders share same duplicates filter through redis.
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+
+# Specify the host and port to use when connecting to Redis (optional).
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
