@@ -9,14 +9,13 @@ from ..items import ImageItem
 
 class MeiNvSpider(RedisSpider):
     name = 'jpxgyw'
-    # allowed_domains = ["www.jpxgyw.com", "www.xgmn5.com", "img.xgmn5.com"]
+    allowed_domains = ["www.jpxgyw.com", "www.xgmn5.com", "img.xgmn5.com"]
 
     def parse(self, response):
         href_list = response.xpath('//a/@href').extract()
         for href in href_list:
             url = urljoin(response.url, href)
             yield Request(url, callback=self.parse_image)
-            yield Request(url)
 
     def parse_image(self, response):
         img_list = response.xpath('//img[starts-with(@src,"/uploadfile")]')
@@ -32,3 +31,9 @@ class MeiNvSpider(RedisSpider):
             item['created_at'] = datetime.datetime.now()
             item['updated_at'] = datetime.datetime.now()
             yield item
+
+        href_list = response.xpath('//a/@href').extract()
+        for href in href_list:
+            url = urljoin(response.url, href)
+            yield Request(url)
+            yield Request(url, callback=self.parse_image)
