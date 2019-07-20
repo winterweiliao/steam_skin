@@ -34,3 +34,18 @@ class Buff163Item(scrapy.Item):
 
     class Meta:
         table_name = 'goods_trade'
+
+
+class ImageItem(scrapy.Item):
+    # define the fields for your item here like:
+    name = scrapy.Field()
+    image_path = scrapy.Field()
+    image_paths = scrapy.Field()
+    image_url = scrapy.Field()
+    image_urls = scrapy.Field()
+    desc = scrapy.Field()
+    created_at = scrapy.Field()
+    updated_at = scrapy.Field()
+
+    class Meta:
+        table_name = 'image'
